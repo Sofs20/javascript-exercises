@@ -15,9 +15,26 @@ Check this link. Scroll down to the bit about Array.from
 or the spread operator. - Or this link.*/
 
 
-const removeFromArray = function() {
-
+const removeFromArray = function remove(numbers, str) {
+    
+    
+   for (let i=1; i<arguments.length; i++){
+    numbers.splice(arguments[i]-1, 1);
+   }
+   if(str === arguments){
+    str.slice(arguments, 1)
+}
+    return numbers;
 };
+
+let result = removeFromArray([1, 2, 3, "ho"], "ho", 3);
+console.log(result);
+
+/*  
+    ✕ ignores non present values (6 ms)
+    ✕ can remove all values (2 ms)
+    ✕ works with strings (1 ms)
+    ✕ only removes same type (1 ms)*/
 
 // Do not edit below this line
 module.exports = removeFromArray;
